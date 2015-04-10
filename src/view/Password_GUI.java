@@ -42,6 +42,15 @@ public final class Password_GUI extends JFrame {
 	/** Contains a string of the password. */
 	private final JTextField myPasswordField; 
 	
+	/** Width of the grid layout. */
+	private final int gridWidth = 5; 
+	
+	/** Height of the grid layout. */
+	private final int gridHeight = 5;
+	
+	/** Default size of the GUI. */
+	private final Dimension GUI_DIMENSIONS = new Dimension(300, 300);
+	
 	/** 
 	 * Constructs a Password_GUI by setting up the GUI panels and giving the password a default
 	 * value.
@@ -51,7 +60,7 @@ public final class Password_GUI extends JFrame {
 		f_passwordGenerator.addGroup(PasswordGenerator.NUMBERS); // numbers included by default
 		
 		myCenterPanel = new JPanel();
-		myCenterPanel.setLayout(new GridLayout(5,5));
+		myCenterPanel.setLayout(new GridLayout(gridHeight,gridWidth));
 		
 		myPasswordField = new JTextField();
 		myPasswordField.setEditable(false);
@@ -77,7 +86,7 @@ public final class Password_GUI extends JFrame {
 		setTitle("Password");
 		setIconImage(new ImageIcon("lock-128.png").getImage());
 		pack();
-		setSize(new Dimension(300, 300));
+		setSize(GUI_DIMENSIONS);
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
